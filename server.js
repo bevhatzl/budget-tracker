@@ -18,17 +18,12 @@ app.use(express.static("public"));
 const PWD = process.env.DB_PWD;
 const databaseUrl = `mongodb+srv://chick-flick:${encodeURIComponent(PWD)}@cluster0.fqf9a.mongodb.net/budget-tracker`;
 
-// mongoose.connect("mongodb://localhost/budget", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
-
 // Connection before deployment
 mongoose.connect(databaseUrl, { useNewUrlParser: true, useFindAndModify: false });
 
 // Connection for deployment on heroku
 // mongoose.connect(
-//   process.env.MONGODB_URI || 'mongodb://localhost/workout',
+//   process.env.MONGODB_URI || 'mongodb://localhost/budget-tracker',
 //   {
 //       useNewUrlParser: true,
 //       useUnifiedTopology: true,
